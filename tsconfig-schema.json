@@ -1,25 +1,29 @@
 {
-    "allOf": [
-        {
-            "$ref": "https://raw.githubusercontent.com/TypeScriptToLua/TypeScriptToLua/master/tsconfig-schema.json"
-        },
-        {
+    "properties": {
+        "gma": {
+            "description": "Your description of the gma object",
+            "type": "object",
             "properties": {
-                "gma": {
-                    "description": "Your description of the gma object",
+                "plugins": {
+                    "description": "An object containing named children that can be a string or another object containing the properties entry and execOnLoad",
                     "type": "object",
-                    "properties": {
-                        "property1": {
-                            "description": "Description of property 1",
-                            "type": "string"
-                        },
-                        "property2": {
-                            "description": "Description of property 2",
-                            "type": "boolean"
+                    "patternProperties": {
+                        "[A-Za-z0-9 _]+": {
+                            "oneOf": [
+                                { "type": "string" },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "entry": { "type": "string" },
+                                        "execOnLoad": { "type": "boolean" }
+                                    },
+                                    "required": ["entry"]
+                                }
+                            ]
                         }
                     }
                 }
             }
         }
-    ]
+    }
 }
