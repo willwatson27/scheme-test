@@ -1,0 +1,25 @@
+{
+    "allOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/TypeScriptToLua/TypeScriptToLua/master/tsconfig-schema.json"
+        },
+        {
+            "properties": {
+                "gma": {
+                    "description": "Your description of the gma object",
+                    "type": "object",
+                    "properties": {
+                        "property1": {
+                            "description": "Description of property 1",
+                            "type": "string"
+                        },
+                        "property2": {
+                            "description": "Description of property 2",
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
