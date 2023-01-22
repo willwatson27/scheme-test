@@ -19,7 +19,7 @@
                     }
                 },
                 "plugins": {
-                    "description": "An object containing named children that can be a string or another object containing the properties entry and execOnLoad",
+                    "description": "function name to plugin options mapping. Plugin options can be subsituted for its label as a string.",
                     "type": "object",
                     "patternProperties": {
                         "[A-Za-z0-9 _]+": {
@@ -30,7 +30,7 @@
                                 {
                                     "type": "object",
                                     "properties": {
-                                        "entry": {
+                                        "label": {
                                             "type": "string"
                                         },
                                         "execOnLoad": {
@@ -38,7 +38,7 @@
                                         }
                                     },
                                     "required": [
-                                        "entry"
+                                        "label"
                                     ]
                                 }
                             ]
