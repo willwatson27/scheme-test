@@ -4,6 +4,21 @@
             "description": "Your description of the gma object",
             "type": "object",
             "properties": {
+                "telnet": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  },
                 "plugins": {
                     "description": "An object containing named children that can be a string or another object containing the properties entry and execOnLoad",
                     "type": "object",
