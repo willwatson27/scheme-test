@@ -5,37 +5,44 @@
             "type": "object",
             "properties": {
                 "telnet": {
-      "type": "object",
-      "properties": {
-        "host": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        }
-      }
-    }
-  },
-                "plugins": {
-                    "description": "An object containing named children that can be a string or another object containing the properties entry and execOnLoad",
                     "type": "object",
-                    "patternProperties": {
-                        "[A-Za-z0-9 _]+": {
-                            "oneOf": [
-                                { "type": "string" },
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "entry": { "type": "string" },
-                                        "execOnLoad": { "type": "boolean" }
-                                    },
-                                    "required": ["entry"]
-                                }
-                            ]
+                    "properties": {
+                        "host": {
+                            "type": "string"
+                        },
+                        "user": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
                         }
+                    }
+                }
+            },
+            "plugins": {
+                "description": "An object containing named children that can be a string or another object containing the properties entry and execOnLoad",
+                "type": "object",
+                "patternProperties": {
+                    "[A-Za-z0-9 _]+": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "entry": {
+                                        "type": "string"
+                                    },
+                                    "execOnLoad": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": [
+                                    "entry"
+                                ]
+                            }
+                        ]
                     }
                 }
             }
